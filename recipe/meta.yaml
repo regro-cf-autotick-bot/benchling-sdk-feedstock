@@ -1,5 +1,5 @@
 {% set name = "benchling-sdk" %}
-{% set version = "0.10.1a0" %}
+{% set version = "0.11.0a0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/benchling-sdk-{{ version }}.tar.gz
-  sha256: 27e1ea5bf18ca61773b7e0613e4088c50041342e1db3b2875b26cad8fb019fef
+  sha256: ce06b9ab55b3ba2a8c6c5eea5f96f173f8b60951686935787939736694f737fc
 
 build:
   number: 0
