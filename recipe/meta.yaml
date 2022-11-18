@@ -1,6 +1,5 @@
 {% set name = "benchling-sdk" %}
-{% set version = "1.0.0a0" %}
-
+{% set version = "1.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,37 +7,36 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/benchling-sdk-{{ version }}.tar.gz
-  sha256: 9b41366966d575a93749464cc98c8e1dd63acdafc5703497f5f64005a7a384a6
+  sha256: a367ff2972c12291a478caa00e25099835ebd8a11769e6075c441e6a66c2fd80
 
 build:
-  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   host:
+    - python >=3.7,<4.0
     - pip
-    - python >=3.7
     - poetry
   run:
-    - attrs >=20.1.0
-    - backoff >=1.10.0,<2.0.0
-    - dataclasses-json >=0.5.2,<0.6.0
-    - httpx >=0.15.0,<0.16.0
     - python >=3.7,<4.0
+    - pyyaml >=6.0,<7.0
+    - attrs >=20.1.0,<23
+    - backoff >=1.10.0,<2.0.0
+    - benchling-api-client ==2.0.69
+    - dataclasses-json >=0.5.2,<0.6.0
+    - httpx >=0.23.0
     - python-dateutil >=2.8.0,<3.0.0
-    - typing-extensions >=3.7.4,<4.0.0
+    - typing-extensions >=3.7.4,<5.0
 
 test:
   imports:
-    - benchling_api_client
-    - benchling_api_client.api
+    - benchling_sdk
   commands:
     - pip check
   requires:
     - pip
-    # Removed "upper bound" pin on attrs for run, pinning here for "pip check"
-    - attrs <21.0.0
 
 about:
   home: https://pypi.org/project/benchling-sdk/
@@ -49,3 +47,5 @@ about:
 extra:
   recipe-maintainers:
     - asford
+    - PertuyF
+    - jfolleas1
