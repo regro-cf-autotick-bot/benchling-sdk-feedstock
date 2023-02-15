@@ -24,11 +24,12 @@ requirements:
     - pyyaml >=6.0,<7.0
     - attrs >=20.1.0,<23
     - backoff >=1.10.0,<2.0.0
-    - benchling-api-client ==2.0.69
+    - benchling-api-client ==2.0.76
     - dataclasses-json >=0.5.2,<0.6.0
     - httpx >=0.23.0
     - python-dateutil >=2.8.0,<3.0.0
     - typing-extensions >=3.7.4,<5.0
+    - psutil >=5.9.3,<6.0
 
 test:
   imports:
